@@ -28,7 +28,7 @@ jobs:
           path: .
 
       - name: Install dependencies
-        run: pip install -r C:\Users\djmar\Desktop\actions-runner\_work\TheFirstOne\requirements.txt
+        run: pip install -r ${{ github.workspace }}\TheFirstOne\requirements.txt
         
   deploy-to-dev:
     name: deploy-to-dev
