@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3.5.2
         with:
           repository: mtararujs/python-greetings
-          path: C:\Users\djmar\Desktop\TheFirstOne
+          path: C:\Users\djmar\Desktop\actions-runner\_work\TheFirstOne
 
       - name: Use working directory
         uses: actions/checkout@v3.5.2
