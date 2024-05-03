@@ -19,7 +19,7 @@ jobs:
       - name: Clone python-greetings
         uses: actions/checkout@v3.5.2
         with:
-          repo: https://github.com/mtararujs/python-greetings
+          repository: https://github.com/mtararujs/python-greetings
           path: C:\Users\djmar\Desktop\TheFirstOne
 
       - name: Use working directory
