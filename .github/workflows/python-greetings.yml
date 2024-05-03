@@ -30,11 +30,16 @@ jobs:
     needs: install-pip-deps
     
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/deploy-to-dev
-
       - name: deploy-to-dev
-        run: echo Deploying to the dev environment...
+        uses: actions/checkout@v3.5.2
+
+      - name: Clone python-greetings repository
+        uses: actions/checkout@v3.5.2
+        with:
+          repository: https://github.com/mtararujs/python-greetings
+          path: C:\Users\djmar\Desktop\actions-runner\_work\TheFirstOne
+          method: http
+
         
   tests-on-dev:
     name: tests-on-dev
@@ -54,8 +59,7 @@ jobs:
       needs: tests-on-dev
     
       steps:
-        - uses: actions/checkout@v4
-        - uses: ./.github/actions/deploy-to-staging
+        - uses: actions/checkout@v3.5.2
 
         - name: deploy-to-staging
           run: echo Deploying to staging...
@@ -78,8 +82,7 @@ jobs:
       needs: tests-on-staging
     
       steps:
-        - uses: actions/checkout@v4
-        - uses: ./.github/actions/ deploy-to-preprod
+        - uses: actions/checkout@v3.5.2
 
         - name: deploy-to-preprod
           run: echo Deploying to pre-production...
@@ -102,8 +105,7 @@ jobs:
       needs: tests-on-preprod
     
       steps:
-        - uses: actions/checkout@v4
-        - uses: ./.github/actions/deploy-to-prod
+        - uses: actions/checkout@v3.5.2
 
         - name: deploy-to-prod
           run: echo Deploying to production...
