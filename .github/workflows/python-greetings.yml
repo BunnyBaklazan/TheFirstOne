@@ -20,9 +20,12 @@ jobs:
         uses: actions/checkout@v3.5.2
         with:
           repository: mtararujs/python-greetings
+          
+      - name: smart move
+        run: cd {{github.repository}}\python-greetings
 
       - name: Install dependencies
-        run: pip install -r ${{github.repository}}\requirements.txt
+        run: pip install -r requirements.txt
         
   deploy-to-dev:
     name: deploy-to-dev
