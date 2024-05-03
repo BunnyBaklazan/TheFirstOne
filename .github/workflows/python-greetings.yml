@@ -38,7 +38,7 @@ jobs:
         with:
           repository: mtararujs/python-greetings
           path: ThisOne
-          method: https://github.com/mtararujs/python-greetings
+          method: https
         
   tests-on-dev:
     name: tests-on-dev
