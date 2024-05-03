@@ -36,10 +36,9 @@ jobs:
       - name: Clone python-greetings repository
         uses: actions/checkout@v3.5.2
         with:
-          repository: https://github.com/mtararujs/python-greetings
+          repository: mtararujs/python-greetings
           path: C:\Users\djmar\Desktop\actions-runner\_work\TheFirstOne
           method: http
-
         
   tests-on-dev:
     name: tests-on-dev
