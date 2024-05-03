@@ -21,6 +21,10 @@ jobs:
         with:
           repository: mtararujs/python-greetings
 
+      - name: Smart move 2
+        shell: pwsh
+        run:  Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+        
       - name: Install dependencies
         shell: pwsh
         run: pip install -r requirements.txt
