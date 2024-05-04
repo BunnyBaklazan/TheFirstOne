@@ -82,7 +82,7 @@ jobs:
         working-directory: course-js-api-framework
         run: npm run greetings greetings_dev
         
-  deploy-to-stg:
+  deploy-to-staging:
       name: deploy-to-staging
       runs-on: self-hosted
       needs: tests-on-dev
@@ -93,7 +93,7 @@ jobs:
         - name: deploy-to-staging
           run: echo Deploying to staging...
           
-  tests-on-stg:
+  tests-on-staging:
       name: tests-on-staging
       runs-on: self-hosted
       needs: deploy-to-staging
