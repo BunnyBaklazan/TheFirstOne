@@ -44,6 +44,7 @@ jobs:
       
       - name: Stop existing service
         run: |
+           cd..
            pm2 delete greetings-app-dev
            set "errorlevel=0"
 
