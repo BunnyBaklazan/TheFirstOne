@@ -41,7 +41,17 @@ jobs:
         with:
           repository: mtararujs/python-greetings
           path: ThisOne
-          method: https
+          method: https 
+      
+      - name: Stop existing service
+        run: |
+          pm2 delete greetings-app-dev || true
+          EXIT /B 0
+
+      - name: Start service
+        run: |
+          cd python-greetings
+          pm2 start app.py --name greetings-app-dev --port 7001
         
   tests-on-dev:
     name: tests-on-dev
