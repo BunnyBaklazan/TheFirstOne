@@ -35,6 +35,9 @@ jobs:
     steps:
       - name: deploy-to-dev
         uses: actions/checkout@v3.5.2
+        
+      - name: Izvade
+        run: echo Deploying to dev
 
       - name: Clone python-greetings repository
         uses: actions/checkout@v3.5.2
@@ -44,7 +47,6 @@ jobs:
       
       - name: Stop existing service
         run: |
-           cd..
            pm2 delete greetings-app-dev
            set "errorlevel=0"
 
