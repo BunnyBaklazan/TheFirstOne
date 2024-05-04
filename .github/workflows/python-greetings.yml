@@ -40,17 +40,14 @@ jobs:
         uses: actions/checkout@v3.5.2
         with:
           repository: mtararujs/python-greetings
-          path: ThisOne
-          method: https 
+          path: ThisOne 
       
       - name: Stop existing service
         run: |
-          pm2 delete greetings-app-dev
-          exit 0 || exit 0  # This ensures the script always exits with code 0
+          pm2 delete greetings-app-dev & set "errorlevel=0
 
       - name: Start service
         run: |
-          cd python-greetings
           pm2 start app.py --name greetings-app-dev --port 7001
         
   tests-on-dev:
