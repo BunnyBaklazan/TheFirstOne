@@ -16,10 +16,11 @@ jobs:
     runs-on: self-hosted
     
     steps:
-      - name: Clone python-greetings
+      - name: Clone python-greetings repository
         uses: actions/checkout@v3.5.2
         with:
           repository: mtararujs/python-greetings
+          path: python-greetings
         
       - name: Install dependencies
         run: |
