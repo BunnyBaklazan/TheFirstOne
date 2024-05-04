@@ -44,7 +44,8 @@ jobs:
       
       - name: Stop existing service
         run: |
-           pm2 delete greetings-app-dev || true
+           pm2 delete greetings-app-dev
+           EXIT /B 0
 
       - name: Start service
         run: |
