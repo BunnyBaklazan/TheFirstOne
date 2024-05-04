@@ -45,7 +45,7 @@ jobs:
       - name: Stop existing service
         run: |
           pm2 delete greetings-app-dev
-          set "errorlevel=0
+          set "errorlevel=0"
 
       - name: Start service
         run: |
