@@ -40,12 +40,12 @@ jobs:
       - name: Izvade
         run: echo Deploying to dev
 
-      - name: Clone python-greetings repository
+      - name: Checkout python-greetings repository
         uses: actions/checkout@v3.5.2
         with:
-          repository: mtararujs/python-greetings
-          path: greetings-app-dev
-          ref: 4e911440a9886c7c26ccbb4eb55f0bc2a5067b51
+          repository: 'mtararujs/python-greetings'
+          path: 'python-greetings'
+          ref: '4e911440a9886c7c26ccbb4eb55f0bc2a5067b51'
       
       - name: Stop existing service
         run: |
