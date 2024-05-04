@@ -45,8 +45,8 @@ jobs:
       
       - name: Stop existing service
         run: |
-          pm2 delete greetings-app-dev || true
-          EXIT /B 0
+          pm2 delete greetings-app-dev
+          exit 0 || exit 0  # This ensures the script always exits with code 0
 
       - name: Start service
         run: |
