@@ -22,7 +22,9 @@ jobs:
           repository: mtararujs/python-greetings
         
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          cd python-greetings
+          pip3 install -r requirements.txt
         
   deploy-to-dev:
     name: deploy-to-dev
