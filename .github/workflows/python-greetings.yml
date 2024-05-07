@@ -49,11 +49,13 @@ jobs:
           ref: '4e911440a9886c7c26ccbb4eb55f0bc2a5067b51'
       
       - name: Delete previous service
-        run: cmd /c "pm2 delete greetings-app-dev & set \"errorlevel=0\""
+        run: |
+          pm2 delete greetings-app-dev 
+            set \"errorlevel=0\"
 
       - name: Start new service
-        run: | 
-          cd python-greetings 
+        working-directory: python-greetings
+        run: |
           pm2 start app.py --name greetings-app-dev --interpreter python3 -- --port 7001          
   
   tests-on-dev:
