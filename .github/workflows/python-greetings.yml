@@ -54,8 +54,8 @@ jobs:
             set \"errorlevel=0\"
 
       - name: Start new service
-        working-directory: python-greetings
         run: |
+          cd python-greetings
           pm2 start app.py --name greetings-app-dev --interpreter python3 -- --port 7001          
   
   tests-on-dev:
