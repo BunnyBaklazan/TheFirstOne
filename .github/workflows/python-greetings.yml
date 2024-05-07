@@ -52,7 +52,10 @@ jobs:
         run: cmd /c "pm2 delete greetings-app-dev & set \"errorlevel=0\""
 
       - name: Start new service
-        run: cd python-greetings && pm2 start app.py --name greetings-app-dev --interpreter python3 -- --port 7001          
+        run: | 
+          cd python-greetings 
+          pm2 start app.py --name greetings-app-dev --interpreter python3 -- --port 7001          
+  
   tests-on-dev:
     name: tests-on-dev
     runs-on: self-hosted
