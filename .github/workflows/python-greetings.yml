@@ -35,28 +35,11 @@ jobs:
     needs: install-pip-deps
     
     steps:
-      - name: deploy-to-dev
-        uses: actions/checkout@v3.5.2
-        
-      - name: Izvade
-        run: echo Deploying to dev
-
-      - name: Checkout python-greetings repository
-        uses: actions/checkout@v3.5.2
-        with:
-          repository: 'mtararujs/python-greetings'
-          path: 'python-greetings'
-          ref: '4e911440a9886c7c26ccbb4eb55f0bc2a5067b51'
-      
-      - name: Delete previous service
-        run: |
-          pm2 delete greetings-app-dev 
-            set \"errorlevel=0\"
-
-      - name: Start new service
-        run: |
-          cd python-greetings
-          pm2 start app.py --name greetings-app-dev --interpreter python3 -- --port 7001          
+      - uses: actions/checkout@v3.5.2
+      - uses: ./.github/action/deploy
+        with: 
+          port: 7001
+          enviroment: dev    
   
   tests-on-dev:
     name: tests-on-dev
